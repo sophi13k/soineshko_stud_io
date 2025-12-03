@@ -1,18 +1,16 @@
-/* 🎨 Змінні кольорів */
 :root {
-    --bg: #0d121c; /* Темніший фон */
-    --card: #161e2c; /* Фон картки */
-    --accent: #ff9f1c; /* Яскравіший, привабливіший акцент (помаранчевий) */
-    --accent-hover: #e58d19; /* Колір при наведенні */
+    --bg: #0d121c;
+    --card: #161e2c;
+    --accent: #ff9f1c;
+    --accent-hover: #e58d19;
     --text: #eef2f9;
     --muted: #aab5c4;
     --shadow-light: rgba(255, 159, 28, 0.1);
     --shadow-dark: rgba(0, 0, 0, 0.5);
-    --success-bg: var(--card); 
+    --success-bg: var(--card);
     --success-border: var(--accent);
 }
 
-/* 🖋️ Загальні стилі */
 * {
     margin: 0;
     padding: 0;
@@ -29,17 +27,15 @@ body {
     min-height: 100vh;
 }
 
-/* 💻 Утиліти */
 .container {
     width: min(1280px, 92%);
     margin: auto;
 }
 
 .section {
-    padding: 80px 0; /* Більший відступ для ПК */
+    padding: 80px 0;
 }
 
-/* АДАПТИВНІСТЬ: Зменшуємо відступи на телефонах */
 @media (max-width: 992px) {
     .section {
         padding: 60px 0;
@@ -48,7 +44,7 @@ body {
 
 .section h2 {
     text-align: center;
-    font-size: clamp(2rem, 4vw, 3rem); /* Адаптивний розмір заголовка */
+    font-size: clamp(2rem, 4vw, 3rem);
     margin-bottom: 50px;
     font-weight: 800;
     letter-spacing: -0.5px;
@@ -65,7 +61,6 @@ body {
     border-radius: 2px;
 }
 
-/* 🚀 Кнопка */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -89,7 +84,6 @@ body {
     box-shadow: 0 8px 25px var(--shadow-light);
 }
 
-/* 🔝 Шапка (Header) */
 header {
     position: sticky;
     top: 0;
@@ -113,7 +107,6 @@ header {
     letter-spacing: 1px;
 }
 
-/* АДАПТИВНІСТЬ: Центруємо логотип, коли меню приховано на мобільних пристроях */
 @media (max-width: 992px) {
     .nav {
         justify-content: center;
@@ -149,14 +142,12 @@ nav a.active::after {
     border-radius: 1px;
 }
 
-/* АДАПТИВНІСТЬ: Приховуємо навігацію на мобільних пристроях */
 @media (max-width: 992px) {
     nav {
         display: none;
     }
 }
 
-/* 🖼️ Секція HERO */
 .hero {
     padding: 100px 0;
     display: grid;
@@ -165,14 +156,12 @@ nav a.active::after {
     align-items: center;
 }
 
-/* АДАПТИВНІСТЬ: Змінюємо сітку на одну колонку на мобільних пристроях */
 @media (max-width: 992px) {
     .hero {
         grid-template-columns: 1fr;
         text-align: center;
         padding: 60px 0;
     }
-    /* Міняємо місцями зображення та текст */
     .hero-image-wrap {
         order: -1;
         margin-bottom: 30px; 
@@ -207,7 +196,7 @@ nav a.active::after {
 }
 
 .hero-text h1 {
-    font-size: clamp(2.5rem, 8vw, 3.8rem); /* Агресивніший clamp для мобільного */
+    font-size: clamp(2.5rem, 8vw, 3.8rem);
     font-weight: 900;
     line-height: 1.2;
     margin-bottom: 20px;
@@ -224,18 +213,16 @@ nav a.active::after {
     font-size: 1.1rem;
 }
 
-/* 📸 Послуги (Services) */
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
-/* АДАПТИВНІСТЬ: Зменшуємо розмір карток та відступи */
 @media (max-width: 600px) {
     .card-grid {
         gap: 20px;
-        grid-template-columns: 1fr; /* 1 колонка на вузьких екранах для кращої читабельності */
+        grid-template-columns: 1fr;
     }
     .card {
         padding: 20px;
@@ -276,21 +263,19 @@ nav a.active::after {
     font-size: 1rem;
 }
 
-/* 🖼️ Галерея (Gallery) */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 15px;
 }
 
-/* АДАПТИВНІСТЬ: Більше колонок на ПК, менше на мобільному */
 @media (max-width: 600px) {
     .gallery {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 10px;
     }
     .gallery img {
-        height: 180px; /* Зменшуємо висоту на телефонах */
+        height: 180px;
     }
 }
 
@@ -304,7 +289,7 @@ nav a.active::after {
 
 .gallery img {
     width: 100%;
-    height: 250px; /* Фіксована висота для ПК */
+    height: 250px;
     object-fit: cover;
     cursor: pointer;
     transition: transform .5s, opacity .5s;
@@ -316,7 +301,6 @@ nav a.active::after {
     opacity: 0.95;
 }
 
-/* 📅 Бронювання (Booking) */
 .booking-card {
     max-width: 500px;
     margin: 40px auto 0;
@@ -326,7 +310,6 @@ nav a.active::after {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* АДАПТИВНІСТЬ: Зменшуємо відступи в картці на мобільному */
 @media (max-width: 550px) {
     .booking-card {
         padding: 20px;
@@ -368,7 +351,6 @@ nav a.active::after {
     width: 100%;
 }
 
-/* 🔔 Спливаюче повідомлення про успіх (Естетичний дизайн) */
 #success-message {
     position: fixed;
     top: 20px;
@@ -378,7 +360,7 @@ nav a.active::after {
     color: var(--text);
     padding: 15px 30px;
     border-radius: 10px;
-    border: 2px solid var(--success-border); 
+    border: 2px solid var(--success-border);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     opacity: 0;
     visibility: hidden;
@@ -387,10 +369,9 @@ nav a.active::after {
     display: flex;
     align-items: center;
     font-weight: 600;
-    white-space: nowrap; /* Запобігаємо розриву тексту */
+    white-space: nowrap;
 }
 
-/* АДАПТИВНІСТЬ: На мобільних пристроях займає майже всю ширину */
 @media (max-width: 600px) {
     #success-message {
         width: 90%;
@@ -411,11 +392,10 @@ nav a.active::after {
 #success-message i {
     font-size: 1.5rem;
     margin-right: 10px;
-    color: var(--accent); 
+    color: var(--accent);
 }
 
 
-/* 📞 Підвал (Footer & Contact) */
 footer {
     padding: 50px 0 30px;
     background: var(--card);
@@ -436,7 +416,6 @@ footer h3 {
     margin-bottom: 25px;
 }
 
-/* АДАПТИВНІСТЬ: Контакти у підвалі один під одним на мобільних */
 @media (max-width: 600px) {
     .contact-links {
         flex-direction: column;
